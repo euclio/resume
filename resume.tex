@@ -1,0 +1,211 @@
+%!TEX TS-program = xelatexmk
+
+\documentclass[11pt]{article}
+
+\usepackage{amssymb}
+\usepackage[inline]{enumitem}
+\usepackage[letterpaper,margin=0.75in]{geometry}
+\usepackage{hyperref}
+\usepackage[none]{hyphenat}
+\usepackage{times}
+\usepackage[compact]{titlesec}
+
+\setlist{nolistsep,label=\textbullet}
+
+% Shortcut commands for common contact information
+\newcommand{\name}{Andrew C. Russell}
+\newcommand{\address}{170 East Sixth St.~\#335 --- Claremont, CA 91711}
+\newcommand{\telephone}{(314) 440--8830}
+\newcommand{\email}{andrew.russell@pomona.edu}
+\newcommand{\website}{http://www.acrussell.com}
+\newcommand{\github}{http://www.github.com/euclio}
+
+% Typesets contact information
+\newcommand\contact{{
+    \noindent{\LARGE\textbf{\name}} \\
+    \address{} \\
+    \telephone{} --- \url{\email} \\
+    \url{\website} --- \url{\github}
+}}
+
+% The divider between the contact information and the rest of the resume
+\newcommand\divider{{
+    \noindent\hrulefill{}
+}}
+
+% Typesets information that goes under education
+% Arguments:
+%   1: Institution
+%   2: Location
+%   3: Degree
+%   4: Date expected or obtained
+%   5: Additional information (GPA, etc.)
+\newcommand\educationentry[5]{{
+    \textbf{#1} --- #2 \\
+    \textbf{#3}, \textit{#4} \\
+    #5
+}}
+
+% Typesets information that goes under experience
+% Arguments:
+%   1: Company/Institution
+%   2: Location
+%   3: Position
+%   4: Date
+\newcommand\experienceentry[4]{{
+    \textbf{#3}, \textit{#4} \\
+    \textbf{#1} --- #2
+}}
+
+% Typesets an item that has a description and a date
+\newcommand\course[2]{#1, \textit{#2}}
+\newcommand\award[2]{\course{#1}{#2}}
+
+% Typesets an activity
+% Arguments:
+%   1: The name of the activity
+%   2: Date
+%   3: Institution/Organization
+\newcommand\activity[3]{{#1, \textbf{#3}, \textit{#2}}}
+
+\begin{document}
+
+% Remove page numbers
+\thispagestyle{empty}
+
+\contact{}
+
+\divider{}
+
+\section*{Education}
+\begin{itemize}[label=,leftmargin=0]
+    \item\educationentry{Pomona College}{Claremont, CA}
+    {Bachelor of Arts in Computer Science, \textnormal{Minor in Classics}}{expected May 2015}
+    {GPA:\ 3.81}
+    \begin{description}
+        \item[Relevant Coursework:] \hfill \\
+        \begin{enumerate*}[itemjoin={{; }},afterlabel={},label={}]
+            \item \course{Artificial Intelligence}{Fall 2013}
+            \item \course{Computer Systems}{Spring 2013}
+            \item \course{Domain-Specific Languages}{Fall 2012}
+        \end{enumerate*}
+    \end{description}
+    \begin{description}
+        \item[Honors and Awards:] \hfill \\
+        \begin{enumerate*}[itemjoin={{; }},afterlabel={},label={}]
+            \item \award{Pomona College Scholar}{Fall 2013}
+            \item \award{National Society of Collegiate Scholars}{Spring 2012}
+        \end{enumerate*}
+    \end{description}
+\end{itemize}
+
+\section*{Computer Skills}
+\begin{description}
+    \item[Languages:]
+    \begin{enumerate*}[itemjoin={{, }},afterlabel={},label={}]
+        \item Python
+        \item Java
+        \item JavaScript
+        \item HTML
+        \item CSS
+        \item C
+        \item Scala
+        \item \LaTeX{}
+        \item Objective-C
+        \item C++
+    \end{enumerate*}
+\end{description}
+
+\begin{description}
+    \item[Software:]
+    \begin{enumerate*}[itemjoin={{, }},afterlabel={},label={}]
+        \item Git
+        \item Eclipse
+        \item XCode
+        \item Vim
+        \item Unix
+        \item Bash
+        \item Heroku
+        \item Photoshop
+        \item SVN
+    \end{enumerate*}
+\end{description}
+
+\begin{description}
+    \item[Frameworks/Libraries:]
+    \begin{enumerate*}[itemjoin={{, }},afterlabel={},label={}]
+        \item Flask
+        \item Node.js
+        \item Chrome Extensions
+        \item jQuery
+        \item Swing/AWT
+        \item JUnit
+        \item iOS
+        \item Android
+        \item ScalaTest
+    \end{enumerate*}
+\end{description}
+
+\section*{Experience}
+\begin{itemize}[label=,leftmargin=0]
+    \item \experienceentry{Google}{Mountain View, CA}
+        {Engineering Practicum Intern}{May 2013--August 2013}
+    \begin{itemize}
+        \item Worked closely with the Ads team to implement needed projects
+        \item Greatly improved the speed of a regression test used often by
+            the team
+        \item Eliminated difficult-to-maintain Python code, designed a script
+            to generate it based on XML schema
+    \end{itemize}
+
+    \item \experienceentry{Pomona College}{Claremont, CA}
+        {Computer Science Mentor}{September 2012--Present}
+    \begin{itemize}
+        \item Tutor nearly 30 students once a week, provide supplemental
+            instruction
+        \item Grade approximately 60 students' weekly assignments, evaluating
+            based on correctness and style
+        \item Mentored Intro in Fall '12 and Fall '13, Data Structures in
+            Spring '13, and Computer Systems in Spring '14
+    \end{itemize}
+
+    \item \experienceentry{Washington University}{St.~Louis, MO}
+        {REU (Research Experience for Undergraduates) Intern}{May 2012--August 2012}
+    \begin{itemize}
+        \item Assisted in computational biology research directed by Professor
+            Weixiong Zhang
+        \item Wrote Python, MATLAB, and Bash scripts to analyze biological
+            data using a variety of techniques
+        \item Worked closely with a graduate advisor to successfully implement
+            the research goals
+    \end{itemize}
+\end{itemize}
+
+\section*{Activities/Interests}
+\begin{itemize}
+    \item \activity{Founding Member}{October 2012--Present}{Claremont Hack}
+        \begin{itemize}
+            \item Organize and participate in the 5C Hackathon, a biannual
+                coding competition with over 130 participants
+            \item Teach HTML, CSS, and JavaScript and mentor during Hack Week, an
+                introduction to programming attended by 100+ students
+            \item Promote collaboration between students across the Claremont
+                Colleges
+        \end{itemize}
+    \item \activity{Board Member}{March 2012--Present}{Pomona Student Union}
+        \begin{itemize}
+            \item Bring outside speakers representing multiple perspectives to
+                campus to debate relevant issues
+        \end{itemize}
+    \item \activity{Winner of the Best Game Award}{Spring 2013}{5C Hackathon}
+        \begin{itemize}
+            \item Wrote a puzzle game for the Nintendo GameBoy with 3 other
+                teammates
+        \end{itemize}
+    \item \activity{Eagle Scout}{August 2011}{Boy Scouts of America}
+    \item Experienced with the Latin language, top contributor to the Facebook
+        translation project
+    \item Traveled to Spain, France, Italy, Sweden
+\end{itemize}
+
+\end{document}
