@@ -11,8 +11,6 @@
 \usepackage[none]{hyphenat}
 \usepackage[compact]{titlesec}
 
-\setlength{\parindent}{0pt}
-
 \setlist{nolistsep,label=\textbullet}
 
 % Shortcut commands for common contact information
@@ -32,7 +30,7 @@
 
 % The divider between the contact information and the rest of the resume
 \newcommand\divider{{
-    \noindent\hrulefill{}
+        \noindent\hrulefill{}%
 }}
 
 % Typesets information that goes under education
@@ -110,11 +108,11 @@
         {Software Engineering Intern}{May 2014---August 2014}
         \begin{itemize}[topsep=4pt]
             \item Assisted the Android team with both server and client work to
-                implement a cutting-edge API\@.
-            \item Refactored a legacy API to use a new, more encapsulated
+                implement a cutting-edge API
+            \item Refactored a legacy RPC to use a new, more encapsulated
                 interface
-            \item Added an API parameter to improve client polling
-                efficiency, saving an average of 1KB per request
+            \item Added an etag parameter to improve client polling efficiency,
+                saving an average of 1KB per request
             \item Designed an interface for paginating large server responses,
                 weighing the pros and cons of various approaches
         \end{itemize}
