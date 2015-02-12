@@ -2,11 +2,11 @@
 
 \documentclass[10pt]{article}
 
-\usepackage{amssymb}
-\usepackage[inline]{enumitem}
+    \usepackage{amssymb}
+    \usepackage[inline]{enumitem}
 \usepackage{fontspec}
 \setmainfont{Trebuchet MS}
-\usepackage[letterpaper,margin=0.75in]{geometry}
+\usepackage[letterpaper,margin=0.55in]{geometry}
 \usepackage{hyperref}
 \usepackage[none]{hyphenat}
 \usepackage[compact]{titlesec}
@@ -58,7 +58,7 @@
 
 % Typesets an item that has a description and a date
 \newcommand\course[2]{#1}
-\newcommand\award[2]{#1, \textit{#2}}
+\newcommand\award[2]{#1: \textit{#2}}
 
 % Typesets an activity
 % Arguments:
@@ -70,7 +70,7 @@
 \begin{document}
 
 % Remove page numbers
-\thispagestyle{empty}
+\pagestyle{empty}
 
 \contact{}
 
@@ -80,10 +80,12 @@
 \begin{itemize}[label=,leftmargin=0pt]
     \item\educationentry{Pomona College}{Claremont, CA}
         {Bachelor of Arts in Computer Science, \textnormal{Minor in Classics}}{Expected Graduation Date: May 2015}
-        {GPA:\ 3.74}
+        {GPA:\ 3.77}
     \begin{description}
         \item[Relevant Coursework:] \hfill \\
-            \begin{enumerate*}[itemjoin={{; }},afterlabel={},label={}]
+        \begin{enumerate*}[itemjoin={{; }},afterlabel={},label={}]
+            \item \course{Augmented Reality Independent Study}{Spring 2015}
+            \item \course{Video Game Console Design}{Spring 2015}
             \item \course{Database Systems}{Fall 2014}
             \item \course{System Administration Seminar}{Fall 2014}
             \item \course{Digital Electronics}{Fall 2014}
@@ -96,8 +98,8 @@
     \begin{description}
         \item[Honors and Awards:] \hfill \\
         \begin{enumerate*}[itemjoin={{; }},afterlabel={},label={}]
-            \item \award{Pomona College Scholar}{Spring 2014, Fall 2013,
-                    Spring 2012, Fall 2011}
+        \item \award{Pomona College Scholar (top 25\% of class)}{Fall 2014,
+        Spring 2014, Fall 2013, Spring 2012, Fall 2011}
         \end{enumerate*}
     \end{description}
 \end{itemize}
@@ -126,14 +128,14 @@
         \end{itemize}
 
     \item \experienceentry{Pomona College}{Claremont, CA}
-        {Computer Science Mentor}{September 2012---Present}
+        {Computer Science Mentor}{September 2012---December 2014}
         \begin{itemize}[topsep=4pt]
-            \item Tutor nearly 30 students once a week, providing supplemental
-                instruction
+            \item Tutor 30 students during weekly mentor sessions, providing
+                supplemental instruction
             \item Grade students' weekly assignments, evaluating
                 based on correctness and style
-            \item Mentored Data Structures, Computer Systems, and Artificial
-                Intelligence
+            \item Mentored Artifical Intelligence, Computer Systems, Data
+                Structures, and Introduction to Computer Science
         \end{itemize}
 \end{itemize}
 
@@ -141,14 +143,17 @@
 \begin{description}
     \item[Languages:]
     \begin{enumerate*}[itemjoin={{, }},afterlabel={},label={}]
-        \item Python
         \item Java
+        \item Python
         \item C++
         \item JavaScript
-        \item HTML/CSS
-        \item C
-        \item Objective-C
+        \item HTML5/CSS3
         \item Scala
+        \item Bash
+        \item Sass/Scss
+        \item Haskell
+        \item Objective-C
+        \item C
         \item \LaTeX{}
     \end{enumerate*}
 \end{description}
@@ -157,15 +162,14 @@
     \item[Software:]
     \begin{enumerate*}[itemjoin={{, }},afterlabel={},label={}]
         \item Vim
+        \item Unix
         \item Git
         \item Eclipse
-        \item Intellij
+        \item IntelliJ
         \item Android Studio
+        \item CMake
+        \item SBT
         \item XCode
-        \item Unix
-        \item Bash
-        \item Heroku
-        \item Photoshop
         \item SVN
     \end{enumerate*}
 \end{description}
@@ -174,6 +178,7 @@
     \item[Frameworks/Libraries:]
     \begin{enumerate*}[itemjoin={{, }},afterlabel={},label={}]
         \item iOS
+        \item Android
         \item JUnit
         \item jQuery
         \item Chrome Extensions
@@ -186,35 +191,39 @@
 
 \section*{Activities/Interests}
 \begin{itemize}[label=,leftmargin=0pt]
-    \item \activity{Head Organizer and Founding Member}{October 2012---Present}{Claremont Hack}
+    \item \activity{Primary Organizer and Founding Member}{October 2012---Present}{Claremont Hack}
         \begin{itemize}[topsep=2pt]
-            \item Organize and participate in the 5C Hackathon, a semiannual
-                coding competition with over 300 attendees
-            \item Teach HTML, CSS, and JavaScript during Hack Week, a week-long
-                seminar attended by 100+ students
+            \item Organize the 5C Hackathon, a semiannual coding competition
+                with over 300 attendees
+            \item Teach web and mobile development during Hack Week, a
+                nightly seminar attended by 100+ students
+            \item Serve as chief liaison to tech company sponsors
             \item Promote collaboration between students across the Claremont
                 Colleges
         \end{itemize}
     \item Open Source Contributor}\hfill\textit{January 2012---Present}
         \begin{itemize}[topsep=2pt]
-            \item Wrote a patch to support the fish shell in Vim
-            \item Improved the build feature of a popular Vim plugin manager
+            \item Added support for the fish shell in Vim (patch 7.4.276)
+            \item Fixed rendering bugs and added Windows support to
+                instant-markdown-d, a Markdown preview server
+            \item Added the ability to specify build-time external commands
+                to NeoBundle, a popular Vim plugin manager
         \end{itemize}
     \item \activity{Winner of \textit{Best Game}}{Spring 2013}{5C Hackathon}
         \begin{itemize}[topsep=2pt]
             \item Designed and implemented a puzzle game for the Nintendo
                 GameBoy with three other teammates
         \end{itemize}
-    \item \activity{Treasurer and Founding Member}{Fall 2013---Present}{J'NEX}
+        \item \activity{Treasurer and Founding Member}{September 2013---Present}{J'NEX}
         \begin{itemize}[topsep=2pt]
             \item Handle finances for Pomona's Japanese culture club
         \end{itemize}
-    \item \activity{Eagle Scout}{August 2011---Present}{Boy Scouts of America}
     \item Experienced translator of Latin\hfill\textit{Spring 2013---Present}
         \begin{itemize}[topsep=2pt]
             \item Contributor to Google Translate and the Latin translation of
                 reddit and Facebook
         \end{itemize}
+    \item \activity{Eagle Scout}{August 2011---Present}{Boy Scouts of America}
 \end{itemize}
 
 \end{document}
