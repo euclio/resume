@@ -2,8 +2,8 @@
 
 \documentclass[10pt]{article}
 
-    \usepackage{amssymb}
-    \usepackage[inline]{enumitem}
+\usepackage{amssymb}
+\usepackage[inline]{enumitem}
 \usepackage{fontspec}
 \setmainfont{Trebuchet MS}
 \usepackage[letterpaper,margin=0.55in]{geometry}
@@ -15,11 +15,11 @@
 
 % Shortcut commands for common contact information
 \newcommand{\name}{Andrew C. Russell}
-\newcommand{\address}{170 East Sixth St.~\#335 --- Claremont, CA 91711}
+\newcommand{\address}{15B Roberts Rd, Cambridge, MA 02138}
 \newcommand{\telephone}{(314) 440--8830}
-\newcommand{\email}{andrew.russell@pomona.edu}
-\newcommand{\website}{http://www.acrussell.com}
-\newcommand{\github}{http://www.github.com/euclio}
+\newcommand{\email}{anrussell@athenahealth.com}
+\newcommand{\website}{https://acrussell.com}
+\newcommand{\github}{https://github.com/euclio}
 
 % Typesets contact information
 \newcommand\contact{{
@@ -39,11 +39,10 @@
 %   2: Location
 %   3: Degree
 %   4: Date expected or obtained
-%   5: Additional information (GPA, etc.)
-\newcommand\educationentry[5]{{
-        \textbf{#1} --- #2\hfill#5 \\
-        \textbf{#3}\hfill#4
-}}
+\newcommand\educationentry[4]{%
+\textbf{#1}\hfill\textit{#4}\newline%
+#3\hfill#2%
+}
 
 % Typesets information that goes under experience
 % Arguments:
@@ -51,14 +50,13 @@
 %   2: Location
 %   3: Position
 %   4: Date
-\newcommand\experienceentry[4]{{
-        \textbf{#3}\hfill\textit{#4} \\
-        #1\hfill#2
-}}
+\newcommand\experienceentry[4]{%
+\textbf{#3}\hfill\textit{#4}%
+\newline#1\hfill#2%
+}
 
 % Typesets an item that has a description and a date
 \newcommand\course[2]{#1}
-\newcommand\award[2]{#1: \textit{#2}}
 
 % Typesets an activity
 % Arguments:
@@ -76,158 +74,135 @@
 
 \divider{}
 
-\section*{Education}
-\begin{itemize}[label=,leftmargin=0pt]
-    \item\educationentry{Pomona College}{Claremont, CA}
-        {Bachelor of Arts in Computer Science, \textnormal{Minor in Classics}}{Expected Graduation Date: May 2015}
-        {GPA:\ 3.77}
-    \begin{description}
-        \item[Relevant Coursework:] \hfill \\
-        \begin{enumerate*}[itemjoin={{; }},afterlabel={},label={}]
-            \item \course{Augmented Reality Independent Study}{Spring 2015}
-            \item \course{Video Game Console Design}{Spring 2015}
-            \item \course{Database Systems}{Fall 2014}
-            \item \course{System Administration Seminar}{Fall 2014}
-            \item \course{Digital Electronics}{Fall 2014}
-            \item \course{Filesystems}{Spring 2014}
-            \item \course{Software Development}{Spring 2014}
-            \item \course{Artificial Intelligence}{Fall 2013}
-            \item \course{Domain-Specific Languages}{Fall 2012}
-            \end{enumerate*}
-    \end{description}
-    \begin{description}
-        \item[Honors and Awards:] \hfill \\
-        \begin{enumerate*}[itemjoin={{; }},afterlabel={},label={}]
-        \item \award{Pomona College Scholar (top 25\% of class)}{Fall 2014,
-        Spring 2014, Fall 2013, Spring 2012, Fall 2011}
-        \end{enumerate*}
-    \end{description}
-\end{itemize}
-
 \section*{Experience}
-\begin{itemize}[label=,leftmargin=0]
+\begin{itemize}[label=,leftmargin=0pt]
+    \item \experienceentry{athenahealth}{Watertown, MA}{Senior Member of the Technical Staff}{August 2015---Present}
+        \begin{itemize}[topsep=4pt]
+        \item Implemented one of athena's first microservices in an initial
+        effort to replatform its monolithic codebase
+        \item Organized a division-wide workshop and hackathon to publicize the
+        Orders API and new platform knowledge
+        \item Managed cross-team design and execution for a critical
+        government certification initiative
+        \item Created testing infrastructure and documented best practices for a
+        mostly untested subsystem
+        \item Reverse-engineered the API of an acquired application to integrate
+        its data and users with the new Hospital product
+        \end{itemize}
     \item \experienceentry{Google}{Mountain View, CA}
         {Software Engineering Intern}{May 2014---August 2014}
         \begin{itemize}[topsep=4pt]
             \item Assisted the Android team with both server and client work to
-                implement a cutting-edge API
-            \item Refactored a legacy RPC to use a new, more encapsulated
-                interface
-            \item Added an etag parameter to improve client polling efficiency,
-                saving an average of 1KB per request
+                implement a cutting-edge API (Nearby)
             \item Designed an interface for paginating large server responses,
-                weighing the pros and cons of various approaches
+            weighing the pros and cons of various approaches
+            \item Added an \texttt{etag} parameter to improve client polling efficiency,
+            saving an average of 1KB per request
+            \item Refactored a legacy RPC to use a new, more encapsulated
+            interface
         \end{itemize}
     \item \experienceentry{Google}{Mountain View, CA}
         {Engineering Practicum Intern}{May 2013---August 2013}
         \begin{itemize}[topsep=4pt]
             \item Tripled the speed of a long regression test used often by the
                 Ads team
-            \item Eliminated difficult-to-maintain Python code, designed a script
-                to generate it based on an XML schema
-        \end{itemize}
-
-    \item \experienceentry{Pomona College}{Claremont, CA}
-        {Computer Science Mentor}{September 2012---December 2014}
-        \begin{itemize}[topsep=4pt]
-            \item Tutor 30 students during weekly mentor sessions, providing
-                supplemental instruction
-            \item Grade students' weekly assignments, evaluating
-                based on correctness and style
-            \item Mentored Artifical Intelligence, Computer Systems, Data
-                Structures, and Introduction to Computer Science
+                \item Eliminated difficult-to-maintain Python code by generating
+                it from an XML schema via script
         \end{itemize}
 \end{itemize}
 
+\section*{Education}
+\begin{itemize}[label=,leftmargin=0pt]
+    \item\educationentry{Pomona College}{Claremont, CA}{Bachelor of Arts in Computer Science \textnormal{and Minor in Classics}}{May 2015}
+
+    \begin{itemize}[label=,]
+        \item \textbf{GPA}: 3.77
+        \item \textbf{Bachelor's Thesis}: Rust vs.\ D: Exploring Possible Successors of C++
+        \item \textbf{Significant Coursework}:
+            \begin{enumerate*}[itemjoin={{, }},afterlabel=,label=]
+                \item \course{Augmented Reality Independent Study}{Spring 2015}
+                \item \course{Database Systems}{Fall 2014}
+                \item \course{System Administration Seminar}{Fall 2014}
+                \item \course{Filesystems}{Spring 2014}
+                \item \course{Software Development}{Spring 2014}
+                \item \course{Artificial Intelligence}{Fall 2013}
+                \item \course{Domain-Specific Languages}{Fall 2012}
+            \end{enumerate*}
+        \item \textbf{Mentored:}
+            \begin{enumerate*}[itemjoin={{, }},afterlabel=,label=]
+                \item Artificial Intelligence
+                \item Computer Systems
+                \item Data Structures
+                \item Introduction to Computer Science
+            \end{enumerate*}
+        \item \textbf{Honors:} Pomona College Scholar, five semesters (top 25\% of class)
+    \end{itemize}
+\end{itemize}
+
 \section*{Software Development Skills}
-\begin{description}
-    \item[Languages:]
+\begin{itemize}[label=,leftmargin=0pt]
+    \item \textbf{Proficient:}
     \begin{enumerate*}[itemjoin={{, }},afterlabel={},label={}]
         \item Java
         \item Python
+        \item Rust
         \item C++
-        \item JavaScript
-        \item HTML5/CSS3
-        \item Scala
-        \item Bash
-        \item Scss
-        \item SystemVerilog
-        \item Haskell
-        \item Objective-C
-        \item C
-        \item \LaTeX{}
-    \end{enumerate*}
-\end{description}
-
-\begin{description}
-    \item[Software:]
-    \begin{enumerate*}[itemjoin={{, }},afterlabel={},label={}]
-        \item Vim
-        \item Unix
+        \item JavaScript (ES6)
+        \item TypeScript
+        \item HTML5
+        \item CSS3
+        \item SQL
         \item Git
-        \item Eclipse
-        \item IntelliJ
-        \item Android Studio
         \item Docker
-        \item CMake
-        \item SBT
-        \item Grunt
-        \item XCode
-        \item ModelSim
-        \item SVN
+        \item Scala
+        \item C
+        \item Perl
+        \item HL7v2
     \end{enumerate*}
-\end{description}
-
-\begin{description}
-    \item[Frameworks/Libraries:]
+    \item \textbf{Familiar:}
     \begin{enumerate*}[itemjoin={{, }},afterlabel={},label={}]
-        \item iOS
         \item Android
-        \item JUnit
-        \item jQuery
-        \item Chrome Extensions
-        \item Flask
-        \item Node.js
-        \item Swing/AWT
-        \item ScalaTest
+        \item iOS
+        \item Amazon Web Services
+        \item \LaTeX{}
+        \item Haskell
+        \item FHIR
     \end{enumerate*}
-\end{description}
+\end{itemize}
 
 \section*{Activities/Interests}
 \begin{itemize}[label=,leftmargin=0pt]
-    \item \activity{Primary Organizer and Founding Member}{October 2012---Present}{Claremont Hack}
+    \item Open Source Contributor\hfill\textit{January 2012---Present}
         \begin{itemize}[topsep=2pt]
-            \item Organize the 5C Hackathon, a semiannual coding competition
-                with over 300 attendees
-            \item Teach web and mobile development during Hack Week, a
-                nightly seminar attended by 100+ students
-            \item Serve as chief liaison to tech company sponsors
-            \item Promote collaboration between students across the Claremont
-                Colleges
+            \item Commits an average of 1,000 times a year on GitHub
+            \item Major feature and bugfix contributions to the Rust compiler
+            \& package manager (\texttt{rustc}, \texttt{cargo}), and vim
+            \item Maintainer of \texttt{rust-rosetta}, an educational collection
+            of RosettaCode solutions written in Rust
+            \item Implemented a cycle-accurate emulator of the Nintendo Game
+            Boy
         \end{itemize}
-    \item \activity{Open Source Contributor}\hfill\textit{January 2012---Present}
+    \item \activity{Member}{November 2017---Present}{Boston Rust}
         \begin{itemize}[topsep=2pt]
-            \item Added support for the fish shell in Vim (patch 7.4.276)
-            \item Fixed rendering bugs and added Windows support to
-                instant-markdown-d, a Markdown preview server
-            \item Added the ability to specify build-time external commands
-                to NeoBundle, a popular Vim plugin manager
+            \item Attends monthly Boston Rust meetups held across Boston and
+            Cambridge
         \end{itemize}
-    \item \activity{Winner of \textit{Best Game}}{Spring 2013}{5C Hackathon}
+    \item \activity{Primary Organizer and Founding Member}{October 2012---August 2015}{Claremont Hack}
         \begin{itemize}[topsep=2pt]
-            \item Designed and implemented a puzzle game for the Nintendo
-                GameBoy with three other teammates
+        \item Organized the 5C Hackathon, a semiannual coding event focused on
+        learning and inclusion with over 300 attendees
+            \item Taught web development during Hack Week, a nightly seminar
+            before the hackathon attended by 100+ students
+            \item Served as chief liaison to tech company sponsors
+            \item Promoted learning and collaboration between students across
+            the Claremont Colleges
         \end{itemize}
-        \item \activity{Treasurer and Founding Member}{September 2013---Present}{J'NEX}
-        \begin{itemize}[topsep=2pt]
-            \item Handle finances for Pomona's Japanese culture club
-        \end{itemize}
-    \item Experienced translator of Latin\hfill\textit{Spring 2013---Present}
+    \item Experienced Latin Translator\hfill\textit{Spring 2013---Present}
         \begin{itemize}[topsep=2pt]
             \item Contributor to Google Translate and the Latin translation of
                 reddit and Facebook
         \end{itemize}
-    \item \activity{Eagle Scout}{August 2011---Present}{Boy Scouts of America}
+    \item \activity{Eagle Scout}{August 2011}{Boy Scouts of America}
 \end{itemize}
 
 \end{document}
