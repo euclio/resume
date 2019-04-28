@@ -1,0 +1,20 @@
+language: minimal
+
+before_install:
+  - echo ttf-mscorefonts-installer msttcorefonts/accepted-mscorefonts-eula select true | sudo debconf-set-selections
+  - sudo apt-get install -y latexmk texlive-xetex texlive-latex-extra texlive-fonts-recommended ttf-mscorefonts-installer
+
+addons:
+  apt:
+    update: true
+
+script:
+  - latexmk -pdf -outdir=build -halt-on-error -view=none -pvc- resume.tex
+
+deploy:
+  provider: pages
+  local_dir: build
+  skip_cleanup: true
+  github_token: $GITHUB_TOKEN
+  target_branch: gh-pages
+
